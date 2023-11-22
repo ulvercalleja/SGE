@@ -22,6 +22,8 @@
                     "Asignaturas": 
                         [{
                             "Asignatura" : "Entornos de desarrollo",
+                            
+                        },{
                             "Asignatura" : "Programacion"
                         }],
                     "Proyectos": 
@@ -39,6 +41,7 @@
                     "Proyectos": 
                         [{
                             "Proyecto" : "Convivencia",
+                        },{
                             "Proyecto" : "Deportivo"
                         }],
                 },
@@ -49,9 +52,12 @@
                     "Departamento" : "Primaria",
                     "Asignaturas": 
                         [{
-                            "Asignatura" : "Lengua Castellana",
-                            "Asignatura" : "Ciencias",
-                            "Asignatura" : "Matematicas",
+                            "Asignatura" : "Lengua Castellana",                          
+                        },{
+                            "Asignatura" : "Ciencias"
+                        },{
+                            "Asignatura" : "Matematicas"
+                        },{
                             "Asignatura" : "Ingles"
                         }],
                     "Proyectos": 
@@ -63,7 +69,11 @@
         document.getElementById("sacarJSON").addEventListener("click", sacarJSON)
 
         function sacarJSON() {
+            var nombreProfesor = profesores[0].Nombre;
+            var asignaturaProfesor = (profesores[0].Asignaturas[0].Asignatura)+" y "+(profesores[0].Asignaturas[1].Asignatura);
             
+            var texto = "El profesor " + nombreProfesor + " que imparte " + asignaturaProfesor + " participa en: ";
+            window.alert(texto);
         }
 
     </script>

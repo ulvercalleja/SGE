@@ -25,6 +25,7 @@
 
             let listaPadre = document.getElementById("lista");
             listaPadre.insertBefore(listaHijo, listaPadre.firstChild);
+            padre.appendChild(listaPadre); 
         }
 
         document.getElementById("debajo").addEventListener("click", moverAbajo);

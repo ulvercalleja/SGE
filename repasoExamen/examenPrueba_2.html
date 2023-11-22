@@ -42,18 +42,22 @@
 
             longitudNombre = textoNombre.replaceAll("Nombre","").replaceAll(" ","").length;
             longitudApellido = textoApellido.replaceAll("Apellido","").replaceAll(" ","").length;
-            if (longitudNombre==0 || longitudApellido==0) {
+            if (longitudNombre < 5 || longitudApellido == 0 || cont < 1) {
                 if (longitudNombre==0) {
                     alert("Nombre vacio.")
                 } else if (longitudNombre<5 || longitudNombre>40) {
                     alert("El nombre tiene " +  + "caracteres y " + "debe tener entre 5 y 40 caracteres.")
                 }
 
-                if (longitudNombre==0) {
+                if (longitudApellido==0) {
                     alert("Apellido vacio.")
                 }
-            } else if (cont < 1) {
-                alert("Marca al menos una casilla.")
+
+                if (cont < 1) {
+                    alert("Marca al menos una casilla.")
+                }
+            } else {
+                alert("¡Datos enviados correctamente! :)")
             }
         }
     </script>

@@ -16,36 +16,36 @@
 
     alumnos = [{
                 "Cliente": 1233,
-                    "Nombre": "Pedro Ramirez",
-                        "Dirección": "Calle de la piruleta 14",
-                            "ultimo_pedido": 
-                        {
-                            "id_pedido": 2,
-                            "Productos": 
-                        [{
-                            "id_producto": 77,
-                            "Nombre": "Impresora Láser",
-                            "Fabricante": "Canon",
-                            "Cantidad": 3,
-                            "precio_uni": 80
-                        },
-                        {
-                            "id_producto": 22,
-                            "Nombre": "Ratón Gamer",
-                            "Fabricante": "Logitech",
-                            "Cantidad": 2, "precio_uni": 55
-                        }]
-                        }
+                "Nombre": "Pedro Ramirez",
+                "Dirección": "Calle de la piruleta 14",
+                "ultimo_pedido": 
+                    {
+                        "id_pedido": 2,
+                        "Productos": 
+                            [{
+                                "id_producto": 77,
+                                "Nombre": "Impresora Láser",
+                                "Fabricante": "Canon",
+                                "Cantidad": 3,
+                                "precio_uni": 80
+                            },
+                            {
+                                "id_producto": 22,
+                                "Nombre": "Ratón Gamer",
+                                "Fabricante": "Logitech",
+                                "Cantidad": 2, "precio_uni": 55
+                            }]
+                    }
                 }]
 
-        document.getElementById("sacarJSON").addEventListener("click", sacarJSON)
+        document.getElementById("sacarJSON").addEventListener("click", sacarJSON);
 
         function sacarJSON() {
             // Acceder a los datos del primer alumno
             var cliente = alumnos[0].Nombre;
             var direccion = alumnos[0].Dirección;
             var productos = alumnos[0].ultimo_pedido.Productos;
-            var precioTotal = (productos[0].precio_uni*productos[0].Cantidad)+(productos[1].precio_uni*productos[1].Cantidad);
+            var precioTotal = (productos[0].precio_uni * productos[0].Cantidad) + (productos[1].precio_uni * productos[1].Cantidad);
             // Construir la cadena de texto
             var texto = "El cliente " + cliente + " que vive en la " + direccion + " se ha comprado: \n";
             texto += productos[0].Cantidad + " " + productos[0].Nombre + " " + productos[0].Fabricante + "\n";
@@ -53,7 +53,7 @@
             texto += "Por un importe total de: " + precioTotal;
 
             // Mostrar la cadena de texto en la consola (puedes ajustar esto según tus necesidades)
-            console.log(texto);
+            window.alert(texto);
         }
 
     </script>

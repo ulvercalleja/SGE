@@ -32,15 +32,15 @@
     <button id="botonContar">Contar</button>
 
     <script>
-        
+        let padre = document.getElementsByTagName("body")[0];
         document.getElementById("botonContar").addEventListener("click", contar)
 
         function contar() {
             let arrayParrafos = document.getElementsByTagName("p");
-            console.log("Numero de parrafos: " + arrayParrafos.length);
+            padre.appendChild("Numero de parrafos: " + arrayParrafos.length);
             
             let arrayEnlaces = document.getElementsByTagName("a");
-            window.alert("Numero de enlaces: " + arrayEnlaces.length);
+            padre.appendChild("Numero de parrafos: " + arrayParrafos.length);
 
             document.body.innerHTML += "El cuarto enlace es: " + arrayEnlaces[3];
         }
