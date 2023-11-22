@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+    <a href="https://www.google.es/" id="enlaceGoogle">Google</a>
+    <a href="https://www.marca.com/" id="enlaceMarca">Marca</a>
+    <a href="https://twitter.com/" id="enlaceTwitter">Twitter</a>
+    <a href="https://www.youtube.com/?hl=es&gl=ES" id="enlaceYouTube">YouTube</a>
+    <input type="submit" id ="botonEnlace" value="¡Pulsa para cambiar el enlace!">
+    <p>Lo confesaba Carlos Sainz en la previa del GP de Singapur, que ahora se siente "uno con el coche" y lo confirmaba en el Libre 2 de este viernes en Marina Bay. El madrileño se marchó con el mejor tiempo del día, en una excepcional vuelta que era la de su primer intento con el compuesto blando y que nadie pudo superar luego. Charles Leclerc lo intento 'a fuego', como en Monza, pero se tuvo que conformar con el segundo, en la que es su gran especialidad, el 'giro secco', que dicen en Italia. Son prácticas y lo seguirá intentando, incluso copiando lso reglajes del español, como hace dos semanas.</p>
+    <p>Lo más importante para los de Maranello es una espectacular puesta en escena, en un circuito en el que no lo esperaban de antemano, pues sus experiencias en trazados de alta carga han sido decepcionante en 2023. Pero quizá el nuevo test de alerones flexibles, endurecido por la FIA, o la eliminación de las tres curvas más lentas en el tercer sector, las que más degradaban las gomas, se han conjugado para beneficiarles como ni siquiera pensaban. </p>
+    <p>Alonso cuarto, podría mejorar. Fernando Alonso estaba tercero, tras los Ferrari, con una vuelta irregular en la que su segundo sector no fue el ideal, que le dejó a tres décimas de Carlos. Y en esas apareció George Russell, jugándose el pescuezo, con un trallazo bestial del Mercedes en la última curva, que lograba controlar para meterse por delante del asturiano y dejarle cuarto. Hamilton está quinto y tiene muchas esperanzas en poder luchar por el triunfo este fin de semana, a decir del heptacampeón.</p>
+    <input type="submit" id ="botonParrafo" value="¡Pulsa para cambiar el parrafo!">
+</body>
+
+<script>
+
+    function cambiarEnlace(){
+        var enlace = document.getElementById("enlaceTwitter");
+        enlace.innerHTML = prompt("Cambia el texto del enlace");
+        enlace.href = prompt("Cambia la direccion del enlace");
+    }
+
+    function cambiarParrafo(){
+        document.getElementsByTagName("p")[1].innerHTML = prompt("Escribe cambios");
+    }
+
+    document.getElementById("botonEnlace").addEventListener("click", cambiarEnlace,false)
+    document.getElementById("botonParrafo").addEventListener("click", cambiarParrafo,false)
+</script>
+    
+</html>

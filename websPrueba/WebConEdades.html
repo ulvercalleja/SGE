@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+
+    <h1>Esta página web es una página HTML válida.</h1>
+
+</body>
+
+<script>
+    
+    const MAY_EDAD = 18;
+    const EDAD_TRAB = 65;
+
+    //prompt abre una ventana que recoge info por teclado
+    //Todo lo que entra por prompt es string
+    nombre=prompt("Dime tu nombre");
+    apellido=prompt("Dime tu apellido");
+    edad=prompt("Dime tu edad");
+
+    //console log muestra la informacion en la consola del navegador (f12)
+    console.log("Tu nombre es " + nombre + " " + apellido + " y tienes: " + edad + " años.");
+
+    /*
+    if (edad<MAY_EDAD) {
+        console.log("Eres menor de edad.")
+
+    } else if (edad>=MAY_EDAD || edad<=EDAD_TRAB){
+            console.log("Estas en edad de trabajar.")
+
+    } else {console.log("Estas jubiladisimo.")}
+    */
+
+    switch (true) {
+        case edad < MAY_EDAD:
+            console.log("Eres menor de edad.");
+        break;
+
+        case edad >= MAY_EDAD && edad<=EDAD_TRAB:
+            console.log("Estas en edad de trabajar.");
+        break;
+
+        case edad > EDAD_TRAB:
+            console.log("Estas jubiladisimo.");
+        break;
+    
+        default:
+            console.log("Edad no válida.");
+        break;
+    
+    };
+</script>
+
+</html>

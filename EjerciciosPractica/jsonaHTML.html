@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos JSON</title>
+
+</head>
+
+<body>
+    <button id="botonAnadir">Añadir</button>
+    <!--Creamos boton para añadir--> <br>
+    <ul id="listaAlumnos"></ul> <!-- Aquí se mostrarán los alumnos -->
+    <script>
+
+        document.getElementById("botonAnadir").addEventListener("click", añadirFuncion) //Escuchamos el click del boton
+
+        function añadirFuncion() {
+            var listaAlumnos = document.getElementById("listaAlumnos");
+
+          /*  // Recorremos el arreglo de alumnos y creamos elementos li para cada uno
+            alumnos.forEach(function (alumno) {
+                var li = document.createElement("li");
+                li.textContent = "Nombre: " + alumno.Nombre;
+                listaAlumnos.appendChild(li);
+
+                li = document.createElement("li");
+                li.textContent = "Apellidos: " + alumno.Apellidos;
+                listaAlumnos.appendChild(li);
+
+                li = document.createElement("li");
+                li.textContent = "Edad: " + alumno.Edad;
+                listaAlumnos.appendChild(li);
+
+                li = document.createElement("li");
+                li.textContent = "Estado civil: " + alumno["Estado civil"];
+                listaAlumnos.appendChild(li);
+
+                li = document.createElement("li");
+                li.textContent = "Telefono: " + alumno.Telefono;
+                listaAlumnos.appendChild(li);
+            });
+        }
+*/
+        alumnos.forEach(function (alumno) {
+            var li = document.createElement("li");
+                li.textContent = "Nombre: " + alumno.Nombre + ", Apellidos: " + alumno.Apellidos + ", Edad: " + alumno.Edad + ", Estado civil: " + alumno["Estado civil"] + ", Teléfono: " + alumno.Telefono;
+                listaAlumnos.appendChild(li);
+            });
+        
+        alumnos = [{
+            "Nombre": "Ulver",
+            "Apellidos": "Calleja Valtuille",
+            "Edad": 22,
+            "Estado civil": "Soltero",
+            "Telefono": "637366234",
+        },
+        {
+            "Nombre": "Daniel",
+            "Apellidos": "Clares",
+            "Edad": 63,
+            "Estado civil": "Casado",
+            "Telefono": "628103345",
+        }]
+        }
+    </script>
+</body>
+
+</html>

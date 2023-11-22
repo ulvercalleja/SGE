@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+
+    <a href="https://www.google.es/" id="enlaceGoogle">Google</a>
+    <a href="https://www.marca.com/" id="enlaceMarca">Marca</a>
+    <a href="https://twitter.com/" id="enlaceTwitter">Twitter</a>
+    <a href="https://www.youtube.com/?hl=es&gl=ES" id="enlaceYouTube">YouTube</a>
+    <input type="submit" id ="botonEnlace" value="¡Pulsa para cambiar el enlace!">
+
+</body>
+<script>
+
+    function copiarEnlace(){
+        for (let index = 0; index < array.length; index++) {
+            var enlace = array[index];
+                console.log(enlace.href);
+        }
+    }
+
+    document.getElementById("botonEnlace").addEventListener("click", moverEnlace,false)
+</script>
+    
+</html>

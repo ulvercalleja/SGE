@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+    <h1>Esta página web es una página HTML válida.</h1>
+    Nombre<input type="text" name="datos" id="nombre">
+    Apellido<input type="text" name="datos" id="apellido">
+    <input type="submit" id ="boton" value="enviar">
+</body>
+
+<script>
+
+    document.getElementById("boton").addEventListener("click",saludar,false)
+    function saludar(){
+      console.log(document.getElementsByName("datos")[0].value)
+      console.log(document.getElementsByName("datos")[1].value)
+    }
+</script>
+    
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+
+    <h1>Esta página web es una página HTML válida.</h1>
+</body>
+
+<script>
+    const palabraMagicaFin = "fin";
+    array = [];
+    palabra2 = false;
+     do {
+        palabra=prompt("Introduce una palabra.").toLowerCase();
+        array.push(palabra);
+
+        if (palabra==palabraMagicaFin){
+            confirm("Do you really want to leave?")
+            palabra2=true;  
+            array.pop() 
+        }
+
+    } while (palabra2==false);
+
+    for (let index = 0; index < array.length; index++) {
+        console.log("La palabra usada es: " + array);
+    }
+    
+
+    
+</script>
+    
+</html>

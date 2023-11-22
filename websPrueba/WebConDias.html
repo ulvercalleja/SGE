@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+
+    <h1>Esta página web es una página HTML válida.</h1>
+
+</body>
+
+<script>
+        dia=prompt("Dime un dia de la semana.").toLowerCase();
+    /*
+    switch (true) {
+        case dia == "lunes" || dia == "martes" || dia == "miercoles" || dia == "jueves" || dia == "viernes":
+            console.log("El dia es laboral.");
+        break;
+
+        case dia == "sabado" || dia == "domingo":
+            console.log("El dia es NO laboral.");
+        break;
+
+        default:
+            console.log("Dia no valido.");
+        break;
+    };
+    */
+
+    array = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+
+    for (let i = 0; i < array.length; i++) {
+        
+        if (dia==array[i]) {
+            alert("El dia existe.");
+            break;
+        } else {diaNoExiste=false;}
+        
+    }
+
+    if (diaNoExiste==false){
+        alert("El dia NO existe.");
+    }
+
+</script>
+
+</html>

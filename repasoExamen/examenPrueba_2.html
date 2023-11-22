@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+</head>
+
+<body>
+    <input type="text" value="Nombre">
+    <input type="text" value="Apellido">
+    <input type="checkbox" value="Azul">Azul</input>
+    <input type="checkbox" value="Rojo">Rojo</input>
+    <input type="checkbox" value="Verde">Verde</input>
+    <input type="button" value="Enviar">
+
+    <script>
+
+
+        document.getElementsByTagName("input")[5].addEventListener("click", botonEnviar);
+
+
+        function botonEnviar() {
+            let textoNombre = document.getElementsByTagName("input")[0].value.toString();
+            let textoApellido = document.getElementsByTagName("input")[1].value.toString();
+
+            let cont = 0;
+
+            if (document.getElementsByTagName("input")[2].checked) {
+                cont++;
+            }
+
+            if (document.getElementsByTagName("input")[3].checked) {
+                cont++;
+            }
+
+            if (document.getElementsByTagName("input")[4].checked) {
+                cont++;
+            }
+
+            longitudNombre = textoNombre.replaceAll("Nombre","").replaceAll(" ","").length;
+            longitudApellido = textoApellido.replaceAll("Apellido","").replaceAll(" ","").length;
+            if (longitudNombre==0 || longitudApellido==0) {
+                if (longitudNombre==0) {
+                    alert("Nombre vacio.")
+                } else if (longitudNombre<5 || longitudNombre>40) {
+                    alert("El nombre tiene " +  + "caracteres y " + "debe tener entre 5 y 40 caracteres.")
+                }
+
+                if (longitudNombre==0) {
+                    alert("Apellido vacio.")
+                }
+            } else if (cont < 1) {
+                alert("Marca al menos una casilla.")
+            }
+        }
+    </script>
+</body>
+
+</html>

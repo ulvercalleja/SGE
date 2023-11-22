@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de llamada a la API Traductor</title>
+</head>
+
+<body>
+
+    <input type="text" id="inputText" placeholder="Ingresa una frase">
+    <input type="button" value="Traducir" id="botonTraducir"></button>
+    <p id="translatedText"></p>
+
+    <label for="opciones">Seleccionar un idiom:</label>
+    <select id="opciones">
+        <option value="opcion1">Spanish</option>
+        <option value="opcion2">English</option>
+    </select>
+
+    <script>
+        //Creamos los reaccionadores a eventos
+        document.getElementById("botonTraducir").addEventListener("click", traducir);
+        document.getElementById("opciones").addEventListener("change",cambiar)
+        //variables que vamos a usar para modificar la llamada a la api
+        idioma;
+        destino;
+            //funcion que cambiara el idioma segun lo seleccionado en el <select> o menu
+       function cambiar(){
+            if (opciones.options[opciones.selectedIndex].value=="opcion1") {
+                idioma="en"
+                destino="es"
+                //Con esto cambiamos lo que aparece en trasparente del inputText
+                document.getElementById("inputText").setAttribute("placeholder","Write here!")
+            }
+            else {
+                idioma="es"
+                destino="en"
+                document.getElementById("inputText").setAttribute("placeholder","¡Escribe aqui!")
+            }
+        }
+        function traducir() {
+            
+            
+            //cambio idioma
+            const url = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
+            const options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                    'Accept-Encoding': 'application/gzip',
+                    'X-RapidAPI-Key': '42be6937a7msh2bbd991245847d2p1af93cjsn06eb2c15f5e8',
+                    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+                },
+                body: new URLSearchParams({
+                    q: document.getElementById("inputText").value,
+                    target: idioma,
+                    source: destino
+                })
+            };
+
+            try {
+                fetch(url, options)
+                .then(response => response.json())
+                .then(data => 
+                    pintar(data)
+                );
+            } catch (error) {
+                console.error(error);
+            }
+            function pintar (data){
+                document.getElementById("translatedText").innerHTML = data.data.translations[0].translatedText;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos JSON</title>
+
+</head>
+
+<body>
+    <label for="cajaTextoNombre">Nombre: </label>
+    <input type="text" id="cajaTextoNombre" name="cajaTextoNombre" /> <!--Creamos la caja para introducir texto-->
+    
+    <label for="cajaTextoApellidos">Apellidos: </label>
+    <input type="text" id="cajaTextoApellidos" name="cajaTextoApellidos" /> <!--Creamos la caja para introducir texto-->
+    
+    <label for="cajaTextoEdad">Edad: </label>
+    <input type="text" id="cajaTextoEdad" name="cajaTextoEdad" /> <!--Creamos la caja para introducir texto--><br>
+
+    <label for="radioSoltero">Estado civil: </label>
+    <label class="radio-inline"> <input type="radio" id="radioSoltero" name="radioEstadoCivil" checked> Soltero </label> <!--Creamos radiobuttonn-->
+    <label class="radio-inline"> <input type="radio" id="radioCasado" name="radioEstadoCivil" checked> Casado </label> <!--Creamos radiobuttonn--><br><br>
+
+    <button id="botonAnadir">Añadir</button> <!--Creamos boton para añadir-->
+
+    <script>
+        document.getElementById("botonAnadir").addEventListener("click", añadirFuncion) //Escuchamos el click del boton
+
+        function añadirFuncion() {
+            var arreglo = [];
+            var cajaTextoNombre = document.getElementById("cajaTextoNombre").value; //Llamamos a las etiquetas del html para darle valor en el JS
+            var cajaTextoApellidos = document.getElementById("cajaTextoApellidos").value; //Llamamos a las etiquetas del html para darle valor en el JS
+            var cajaTextoEdad = document.getElementById("cajaTextoEdad").value; //Llamamos a las etiquetas del html para darle valor en el JS
+            var estado_civil;
+            
+           
+            if (document.getElementById("radioSoltero").checked) {
+                estado_civil = "soltero";
+            } else if (document.getElementById("radioCasado").checked) {
+                estado_civil = "casado";
+            };
+
+            alumnosJSON = {
+                "Nombre" : cajaTextoNombre,
+                "Apellido" : cajaTextoApellidos,
+                "Edad" : cajaTextoEdad,
+                "Estado civil" : estado_civil
+            };
+
+            arreglo.push(alumnosJSON);
+
+            console.log(arreglo);
+        }
+    </script>
+</body>
+
+</html>

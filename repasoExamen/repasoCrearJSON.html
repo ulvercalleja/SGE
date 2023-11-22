@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JSON</title>
+
+</head>
+
+<body>
+
+    <button id="sacarJSON">Sacar JSON!</button>
+
+    <script>
+
+    profesores = [{
+                    "Nombre": "Pedro Ramirez",
+                    "DNI": "05459182M",
+                    "Telefono" : "616366243",
+                    "Departamento" : "Informatica",
+                    "Asignaturas": 
+                        [{
+                            "Asignatura" : "Entornos de desarrollo",
+                            "Asignatura" : "Programacion"
+                        }],
+                    "Proyectos": 
+                        []
+                },
+                {
+                    "Nombre": "Sebastian Gomez",
+                    "DNI": "12439182H",
+                    "Telefono" : "614732223",
+                    "Departamento" : "Informatica",
+                    "Asignaturas": 
+                        [{
+                            "Asignatura" : "Bases de datos"
+                        }],
+                    "Proyectos": 
+                        [{
+                            "Proyecto" : "Convivencia",
+                            "Proyecto" : "Deportivo"
+                        }],
+                },
+                {
+                    "Nombre": "Angeles Jesus",
+                    "DNI": "92423152Z",
+                    "Telefono" : "624281423",
+                    "Departamento" : "Primaria",
+                    "Asignaturas": 
+                        [{
+                            "Asignatura" : "Lengua Castellana",
+                            "Asignatura" : "Ciencias",
+                            "Asignatura" : "Matematicas",
+                            "Asignatura" : "Ingles"
+                        }],
+                    "Proyectos": 
+                        [{
+                            "Proyecto" : "Convivencia"
+                        }],
+                }]
+
+        document.getElementById("sacarJSON").addEventListener("click", sacarJSON)
+
+        function sacarJSON() {
+            
+        }
+
+    </script>
+</body>
+
+</html>

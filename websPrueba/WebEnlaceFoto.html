@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>HTML</title>
+
+</head>
+
+<body>
+
+    <input type="text" id="cajaTexto" name="cajaTexto" />  <!--Creamos la caja para introducir texto--> <br>
+    <label class="radio-inline"> <input type="radio" id="radioTexto" name="optradio" checked> Texto </label> <!--Creamos radiobuttonn-->
+    <label class="radio-inline"> <input type="radio" id="radioEnlace" name="optradio"> Enlace </label> <!--Creamos radiobuttonn-->
+    <label class="radio-inline"> <input type="radio" id="radioFoto" name="optradio"> Foto </label> <!--Creamos radiobuttonn-->
+    <button id="botonAnadir">Añadir</button> <!--Creamos boton para añadir--> <br>
+    <!--div se usa como padre, es decir, se va a ir llamando a las demas etiquetas para que se imprima por debajo del boton,radio, texto-->
+    <div id="padreDiv"> </div>
+    
+</body>
+
+<script>
+
+    document.getElementById("botonAnadir").addEventListener("click", añadirFuncion) //Escuchamos el click del boton
+
+    function añadirFuncion() {
+
+        var radioTexto = document.getElementById("radioTexto"); //Llamamos a las etiquetas del html para darle valor en el JS
+        var radioEnlace = document.getElementById("radioEnlace"); //Llamamos a las etiquetas del html para darle valor en el JS
+        var radioFoto = document.getElementById("radioFoto"); //Llamamos a las etiquetas del html para darle valor en el JS
+        var padreDiv = document.getElementById("padreDiv"); //Llamamos a las etiquetas del html para darle valor en el JS
+        var cajaTexto = document.getElementById("cajaTexto"); //Llamamos a las etiquetas del html para darle valor en el JS
+        var cadena = document.createElement("li"); //Creamos variable para poner el "punto"
+
+        if (radioTexto.checked){
+            cadena.textContent = cajaTexto.value;
+            padreDiv.appendChild(cadena);
+        } else if (radioEnlace.checked) {
+            var enlace = document.createElement("a");
+            enlace.href = cajaTexto.value;
+            enlace.textContent = cajaTexto.value;
+            cadena.appendChild(enlace);
+            padreDiv.appendChild(cadena);
+        } else if (radioFoto.checked){
+            var foto = document.createElement("img");
+            foto.src = cajaTexto.value;
+            cadena.appendChild(foto);
+            padreDiv.appendChild(cadena);
+        }
+    }
+</script>
+
+</html>
+

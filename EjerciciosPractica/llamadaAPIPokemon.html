@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Habilidades</title>
+</head>
+
+<body>
+    <div>
+        Pokemon: <input type="text" name="texto" id="textoPokemon">
+        <input type="button" value="Aceptar" id="botonAceptar">
+        <input type="button" value="MostrarPorPantalla" id="botonMostrarPorPantalla">
+        <input type="button" value="PokemonShiny" id="botonPokemonShiny">
+    </div>
+
+    <div>
+        <h1>Información de Pokémon</h1>
+        <table border="1">
+            <tr>
+                <th>Nombre del Pokémon</th>
+                <th>Tipos</th>
+                <th>Ataques</th>
+                <th>Stats</th>
+            </tr>
+            <tbody id="pokemonTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("botonAceptar").addEventListener("click", cambiarPokemon);
+
+        function cambiarPokemon() {
+            var texto = document.getElementById("textoPokemon").value;
+            var enlace = 'https://pokeapi.co/api/v2/pokemon/' + texto;
+
+            fetch(enlace)
+                .then(response => response.json())
+                .then(data => {
+                    mostrarDatosEnTabla(data);
+                })
+                .catch(error => {
+                    console.error("Error al cargar los datos del Pokémon:", error);
+                });
+        }
+
+        function mostrarDatosEnTabla(data) {
+            var tabla = document.getElementById("pokemonTableBody");
+            tabla.innerHTML = ""; // Limpiar tabla para ingresar otro pokemon
+
+            // Crear fila para el pokemon
+            var fila = document.createElement("tr");
+
+            // Nombre del pokemon
+            var celdaNombre = document.createElement("td");
+            celdaNombre.textContent = data.name;
+            fila.appendChild(celdaNombre);
+
+            // Tipos del pokemon
+            var celdaTipos = document.createElement("td");
+            var tipos = data.types.map(type => type.type.name).join(", ");
+            celdaTipos.textContent = tipos;
+            fila.appendChild(celdaTipos);
+
+            // Movimientos del Pokemon
+            var celdaMovimientos = document.createElement("td");
+            var movimientos = data.moves.slice(0, 5).map(move => move.move.name).join(", ");
+            celdaMovimientos.textContent = movimientos;
+            fila.appendChild(celdaMovimientos);
+
+            // Estadísticas del Pokemon
+            var celdaEstadisticas = document.createElement("td");
+            var estadisticas = data.stats.map(stat => stat.stat.name + ": " + stat.base_stat).join(", ");
+            celdaEstadisticas.textContent = estadisticas;
+            fila.appendChild(celdaEstadisticas);
+
+            tabla.appendChild(fila);
+        }
+    </script>
+</body>
+
+</html>

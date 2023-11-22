@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso 1</title>
+
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet. Aut consequatur atque ut voluptas doloremque aut dolor incidunt At corporis iusto. Ut omnis rerum ut debitis quos qui voluptates molestias sed voluptatum iusto aut odit voluptates. Et ipsa numquam id recusandae consequatur ut dolorem natus.
+        <a href="https://www.google.es/" id="enlaceGoogle">Google</a>
+    </p>
+
+    <p>
+        Qui voluptatem perspiciatis qui facere impedit ut delectus explicabo qui accusantium reprehenderit. Id laudantium molestiae est debitis maiores ut dicta cupiditate et harum perspiciatis 33 numquam quis est numquam culpa sit numquam galisum. Qui pariatur quasi ut ipsam quae et reprehenderit voluptatem a blanditiis quia. Nam unde beatae aut temporibus ratione hic error Quis ut nulla voluptatibus eum necessitatibus esse ut praesentium vitae.
+        <a href="https://www.marca.com/" id="enlaceMarca">Marca</a>
+    </p>
+
+    <p>
+        In perferendis perspiciatis aut tempora voluptatum qui modi aspernatur. Quo nisi sequi ab animi assumenda qui perferendis adipisci in dolor officia vel porro officia.
+        <a href="https://twitter.com/" id="enlaceTwitter">Twitter</a>
+    </p>
+
+    <p>
+        El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de "de Finibus Bonorum et Malorum" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.
+        <a href="https://www.youtube.com/?gl=ES&hl=es" id="enlaceYoutube">Youtube</a>
+    </p>
+
+    <button id="botonContar">Contar</button>
+
+    <script>
+        
+        document.getElementById("botonContar").addEventListener("click", contar)
+
+        function contar() {
+            let arrayParrafos = document.getElementsByTagName("p");
+            console.log("Numero de parrafos: " + arrayParrafos.length);
+            
+            let arrayEnlaces = document.getElementsByTagName("a");
+            window.alert("Numero de enlaces: " + arrayEnlaces.length);
+
+            document.body.innerHTML += "El cuarto enlace es: " + arrayEnlaces[3];
+        }
+
+    </script>
+</body>
+
+</html>
